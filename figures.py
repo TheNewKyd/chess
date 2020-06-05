@@ -32,14 +32,20 @@ import board as b
 class Figures():
 
     def __init__(self):
-        pass
+        self.nb = b.makeBoard()
+        #return self.nb <- for use of test
 
     def crushesAndTakes():
         """Is the move possible(crushes) and takes"""
         pass
 
-    def king():
+    def king(self, coor):
         """Moves"""
+        nb = self.nb
+        try:
+            pass
+        except:
+            pass
         pass
 
     def queen():
