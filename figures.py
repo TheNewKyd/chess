@@ -28,37 +28,105 @@
 #       of yours, You can "take" it, by crossing one sqr.
 
 import board as b
+from tabulate import tabulate
 
 class Figures():
 
     def __init__(self):
-        self.nb = b.makeBoard()
-        #return self.nb <- for use of test
+        nbinfo_ =  b.startBoard()
+        self.nb_ = nbinfo_[3]
+        self.nbc_ = nbinfo_[0]
+        self.nbr_ = nbinfo_[1]
+        self.nbv_ = nbinfo_[2]
 
-    def crushesAndTakes():
+    def crushesAndTakes(self):
         """Is the move possible(crushes) and takes"""
         pass
 
-    def king(self, coor):
-        """Moves"""
-        nb = self.nb
+    def kingPossibleMoves(cc_=[self.nbc_[5], self.nbr_[5]]):
+        possibleMoves_ = []
+        cc0 = cc_[0]
+        cc1 = cc_[1]
+
+        #1.Górny lewy
         try:
+            n = [cc0 - 1, cc1 - 1]
+            possibleMoves_.append(n)
+
+        except IndexError:
             pass
-        except:
+        #2. Górny środkowy
+        try:
+            n = [cc0, cc1 - 1]
+            possibleMoves_.append(n)
+
+        except IndexError:
             pass
+        #3. Górny prawy
+        try:
+            n = [cc0 + 1, cc1 - 1]
+            possibleMoves_.append(n)
+
+        except IndexError:
+            pass
+        #4. Środek lewy
+        try:
+            n = [cc0 - 1, cc1]
+            possibleMoves_.append(n)
+
+        except IndexError:
+            pass
+        #5. Środek prawy
+        try:
+            n = [cc0 + 1, cc1]
+            possibleMoves_.append(n)
+
+        except IndexError:
+            pass
+        #6. Dół lewy
+        try:
+            n = [cc0 - 1, cc1 + 1]
+            possibleMoves_.append(n)
+
+        except IndexError:
+            pass
+        #7. Dół środek
+        try:
+            n = [cc0 - 1, cc1 + 1]
+            possibleMoves_.append(n)
+
+        except IndexError:
+            pass
+        #8. Dół prawy
+        try:
+            n = [cc0 + 1, cc1 + 1]
+            possibleMoves_.append(n)
+
+        except IndexError:
+            pass
+
+        return possibleMoves_
+
+    def king(self, cc_, nc_):
+        """Moves"""
+        pm_ = [] # possbile moves
+
+        if nc_ in pm_: #nc_ - new coor
+            cc_ = nc_ #cc_ - current coor
+
         pass
 
-    def queen():
+    def queen(self):
         pass
 
-    def bishop():
+    def bishop(self):
         pass
 
-    def knight():
+    def knight(self):
         pass
 
-    def rook():
+    def rook(self):
         pass
 
-    def pawn():
+    def pawn(self):
         pass
